@@ -24,13 +24,31 @@
    				$("p").slideToggle();
    			})
 
+			 // toggle() 用于连续点击事件，有多个参数，依次触发。如果执行完一轮则继续重复
+				// 为什么这里用了toggle之后，div和h5都隐藏了，重新写个html试试
+				// 查看文档后发现toggle()的绑定两个或多个处理程序绑定到匹配的元素执行交替的点击被弃用了 。
+				// 
+				//  新的toggle()  用来显示或隐藏匹配元素。 这样就不用再去写if语句了 
 
+				    $("#panel h5.head").bind("click",function(){
+				      $(this).next().toggle();
+				    }) 
+
+
+				  // $("#panel h5.head").toggle(function(){
+				  //   $(".none").show();
+				  // },function(){
+				  //   $(".none").hide();
+				  // });
+			
+
+			
    			// 改用hover() 用于模拟光标悬停事件,当移到元素上时，会触发第一个函数，以此类推
-   				$("#panel h5.head").hover(function(){
-   					$(this).next().show();
-   				},function(){
-   					$(this).next().hide();
-   				})
+   				//$("#panel h5.head").hover(function(){
+   					//$(this).next().show();
+   				//},function(){
+   					//$(this).next().hide();
+   				//})
 
    			//将重复出现的$(this).next()存在变量中
 	   	 		//$("#panel h5.head").bind("click",function(){
