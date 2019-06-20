@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+		<select id="single">
+			<option>选中1号</option>
+			<option>选中2号</option>
+			<option>选中3号</option>
+		</select>
+		<select id="multiple" multiple="multiple" style="height:200px;">
+			<option selected="selected">选中1号</option>
+			<option>选中2号</option>
+			<option>选中3号</option>
+			<option>选中4号</option>
+			<option selected="selected">选中5号</option>
+		</select>
+		<input type="checkbox" value="check1">多选1
+		<input type="checkbox" value="check2">多选2
+		<input type="checkbox" value="check3">多选3
+		<input type="checkbox" value="check4">多选4
+		<input type="radio" value="radio1">单选1
+		<input type="radio" value="radio2">单选2
+		<input type="radio" value="radio3">单选3
+
+
+
+	<script>
+
+	$(":checkbox").val(["check1","check4"]);
+	console.log($(":checkbox"));
+	$(":radio").val(["radio1","radio3"]);
+
+
+	// 多选时，用数组形式
+		// $("#single").valueal(["选中2号","选中3号"]);
+
+
+	// 将2号选中
+		// $("#single").val("选中2号");
+
+	</script>
+    </body>
+</html>

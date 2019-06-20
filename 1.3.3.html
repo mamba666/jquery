@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.4.1.js"></script>
+	<style>
+		*{
+			list-style:none;
+			text-decoration:none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="menu">
+			<li class="level1">
+				<a href="#none">一</a>
+				<ul class="level2">
+					<li><a href="#none">1</a></li>
+					<li><a href="#none">2</a></li>
+					<li><a href="#none">3</a></li>
+					<li><a href="#none">4</a></li>
+				</ul>
+			</li>
+			<li class="level1">
+				<a href="#none">二</a>
+				<ul class="level2">
+					<li><a href="#none">5</a></li>
+					<li><a href="#none">6</a></li>
+					<li><a href="#none">7</a></li>
+					<li><a href="#none">8</a></li>
+				</ul>
+			</li>
+			<li class="level1">
+				<a href="#none">三</a>
+				<ul class="level2">
+					<li><a href="#none">1</a></li>
+					<li><a href="#none">2</a></li>
+					<li><a href="#none">3</a></li>
+					<li><a href="#none">4</a></li>
+				</ul>
+			</li>
+			<li class="level1">
+				<a href="#none">四</a>
+				<ul class="level2">
+					<li><a href="#none">9</a></li>
+					<li><a href="#none">10</a></li>
+					<li><a href="#none">11</a></li>
+					<li><a href="#none">12</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>	
+
+	<script>
+	// 点击level下的a即主标签时
+		$(".level1>a").click(function(){
+			// 这个a的class会多一个current，然后他的子元素显示，父元素的兄弟的孩子都去掉一个名为current的class，并且将其子元素都隐藏
+			// 
+			// 这里的removeClass("current")其实没有必要   因为并没有将其他三个加上current！
+			$(this).addClass("current").next().show().parent().siblings().children('a').removeClass("current").next().hide();
+
+			// 为了增加易读性
+			
+			// $(".level1>a").click(function(){
+			// 	$(this).addClass("current")
+			// 	.next().show()
+			// 	.parent().siblings().children("a").removeClass("current")
+			// 	.next().hide;			
+			// });
+			return false;
+		});
+
+	</script>
+</body>
+</html>

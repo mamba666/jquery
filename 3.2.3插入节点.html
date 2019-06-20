@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<p>我想说</p>
+
+
+
+	<script>
+	//这里的匹配元素是指$里面的元素
+	//after和before都是会换行的插入内容
+	//append和prepend都是追加内容
+
+	// 还是一样的颠倒
+		// $("<b>hello</b>").insertAfter("p");
+
+
+	// 在每个匹配的元素之前插入内容/b>");
+		// $("p").before("<b>hello</b>");
+
+
+	// 同appendTo，prependTo类似
+		  // $("<b>hello</b>").insertAfter("p");
+
+
+	// 在每个匹配的元素后插入内容，因为p是块级元素，所以插入的内容会换行
+			// $("p").after("<b>hello</b>");
+
+
+	// 和appendTo类似
+			// $("<b>hello</b>").prependTo("p");
+
+	
+	// 向每个匹配的元素内部前置内容
+		// 	$("p").prepend("<b>hello</b>");
+
+	
+	// 实际上是颠倒了常规的$("a").append("b")，即不是将b追加到a，而是将a追加到b
+		// 	$("<b>hello</b>").appendTo("p");
+
+
+	// 向每个匹配的元素内部追加内容
+		 $("p").append("<b>hello</b>");
+	</script>
+</body>
+</html>

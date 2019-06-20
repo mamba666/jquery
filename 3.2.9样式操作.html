@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.4.1.min.js"></script>
+        <style>
+        	.myClass{
+        		font-style:italic;
+        	}
+			.fuck{
+				color:green;
+				font-weight:bold;
+			}
+        </style>
+    </head>
+    <body>
+		<p class="myClass" title="xxxx">xxxxx</p>
+		<button>xxx</button>
+	
+
+	<script>
+
+	// hasClass()用来判断是否有这个类
+		// console.log($("p").headadsClass("myClass"));
+
+
+	// 设置或移除被选元素的一个或多个类进行切换,该方法检查每个元素中指定的类。如果不存在则添加类，如果已设置则删除之。这就是所谓的切换效果。不过，通过使用 "switch",参数，您能够规定只删除或只添加类
+		// $("button").click(function(){
+		// 	$("p").toggleClass("fuck",true);
+		// })
+
+
+	// removeClass()用来移除类
+		// $("p").removeClass("myClass");
+
+
+	// 追加属性
+		// $("p").addClass("fuck");
+
+	// 这种事替换掉属性，如果想追加属性，可以用addClass()
+		// $("p").attr("class","fuck")
+	</script>
+    </body>
+</html>

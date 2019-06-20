@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<p id="cr">`如果获取的对象是jquery   则定义时用$</p> 
+	<p>有两种办法将jquery对象转换成DOM对象：</p><br><br>
+	<p>
+
+		第一种：jQuery对象是一个类似数组的对象，可以通过[index]的方法得到相应的DOM对象。<br>
+		代码如下：<br>
+		var $jq=$("#jq");<br>
+		var jq=$jq[0];   jquery对象本质是一个数组<br>
+	</p>	
+	<p>
+		第二种：是jQuery本身提供的，通过get(index)方法得到相应的DOM对象。<br>
+		代码如下：<br>
+		var $jq=$("#jq");<br>
+		var jq=$jq.get(0);<br>
+	</p>
+	<hr>
+	<p>
+	DOM对象转换成jquery对象：<br>
+		对于一个DOM对象只需要用$()将其包裹起来就可以获得一个jquery对象了<br>
+		代码如下：<br>
+		var jq=document.getElementById("jq");<br>
+		var $(jq)=$(jq);<br>
+
+	</p>
+	<hr>
+	<p>DOM对象只能使用DOM方法   jquery同理    必须经过对象转换才能使用其对立方法</p>
+		
+
+		
+
+	<script>
+	var $cr=$("#cr");
+	var cr=$cr.get(0);
+	console.log($cr);
+	alert(typeof($cr));
+	alert(typeof(cr));
+	</script>
+</body>
+</html>

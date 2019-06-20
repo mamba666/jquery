@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<p title="选择你最喜欢的水果">你最喜欢的水果是？</p>
+	<ul>
+		<li title="apple">apple</li>
+		<li title="orange">orange</li>
+		<li title="菠萝">菠萝</li>
+	</ul>
+
+
+	<script>
+		var $li=$("ul li:eq(1)");
+		var li_txt=$li.text();
+		alert(li_txt);
+
+		var $para=$("p");
+		// attr()用来获取元素的属性值
+		var p_txt=$para.attr("title");
+		alert(p_txt);
+
+		// var $li_1=$("<li></li>");
+		// var $li_2=$("<li></li>");
+		// $("ul").append($li_1);
+		// $("ul").append($li_2);
+		// 链式写法
+		// $("ul").append($li_1).append($li_2);
+
+		// 在创建元素节点时，把文本写到里面就直接也创造了文本节点
+		// 
+		// 
+		var $li_1=$("<li>香蕉</li>");
+		var $li_2=$("<li>雪梨</li>");
+
+		$("ul").append($li_1);
+		$("ul").append($li_2);
+
+		// 这里有错误
+
+		// var $x=$("<li><em>这是</em><b>一个</b><a href="#">复杂的组合</a></li>");
+		var $li_3=$("<li>xxxx</li>");
+
+		$("ul").append($li_3);
+
+
+
+
+	</script>
+</body>
+</html>

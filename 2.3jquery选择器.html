@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.4.1.min.js"></script>
+	<style>
+		div,span,p{
+			width:140px;
+			height:140px;
+			margin:5px;
+			background:#aaa;
+			border:#000 1px solid;
+			float:left;
+			font-size:17px;
+			font-family:Verdana;
+		}
+		div.mini{
+			width:55px;
+			height:55px;
+			background:#aaa;
+			font-size:12px;
+		}
+		div.hide{
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<div class="one" id="one">
+		id为one class也为one的div
+		<div class="mini">class为mini</div>
+	</div>
+	<!-- title作用为鼠标放在上面的提示信息 -->
+	<div class="one" id="two" title="test">
+		id为two class为one  title为test的div
+		<div class="mini" title="other">class为mini  title为other</div>
+		<div class="mini" title="test">class为mini  title为test</div>
+	</div>
+
+	<div class="one">
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini"></div>
+	</div>
+
+	<div class="two">
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini"></div>
+	</div>
+	<div class="one">
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini" title="test">class为mini  title为test</div>
+	</div>
+	<div class="one">
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini">class为mini</div>
+		<div class="mini" title="test">class为mini  title为test</div>
+	</div>
+	<div style="display:none;" class="none">
+		style的display为none的div
+	</div>
+	<div class="hide">class为hide的div</div>
+	<div>
+		包含input的type为hidden的div
+		<input type="text" size="8">
+	</div>
+	<span id="mover">正在执行动画的span元素</span>
+
+
+	<script>
+		$(".one").siblings("div")
+			.css("background","#bbffaa");
+		// $("body>div")
+		// 	.css("background","#bbffaa");
+
+
+		// $("#one")
+		// 	.css("background","#bbffaa");
+		// $(".mini")
+		// 	.css("background","#bbffaa");
+		// $("div")
+		// 	.css("background","#bbffaa");
+		// $("*")
+		// 	.css("background","#bbffaa");
+		// $("span,#two")
+		// 	.css("background","#bbffaa");		
+	</script>
+</body>
+</html>

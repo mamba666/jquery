@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+	<div class="SubCategoryBox">
+		<ul>
+			<li><a href="#">1</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">7</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">14</a></li>
+		</ul>
+		<div class="showmore">
+			<a href="more.html"><span>显示所有</span></a>
+		</div>
+	</div>
+
+	<script>
+	// 先获取ul下索引大于5的li，然后去掉最后一个元素。
+	var $category=$("ul li:gt(5):not(:last)");
+	$category.hide();
+
+	var $toggleBtn=$("div.showmore>a");
+	$toggleBtn.click(function(){
+		$category.show();
+		$(this).find("span").text("haha");
+		$("ul li")
+			.filter(":contains('7')")
+			.addClass("promoted");
+		// 超链接不跳转
+		return false;   	
+	});
+
+	</script>
+</body>
+</html>

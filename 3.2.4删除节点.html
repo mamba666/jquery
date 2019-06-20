@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<p>这是一个段落。</p>
+	<p>这是另一个段落。</p>
+	<button>删除所有 p 元素</button>
+
+
+	<script>
+	// remove()和empty()不会保留元素的 jQuery 数据。其他的比如绑定的事件、附加的数据等都会被移除。这一点与 detach() 不同
+	// 
+	// 
+	// detach()和remove()都会删除元素自身内容，这一点和empty()不同
+
+	// empty()用于移除所有匹配的元素,严格来讲，他不是删除节点的方法，而是清空节点，并且还能清空所有的后代节点
+		// $(document).ready(function(){
+		// 	$("button").click(function(){
+		// 		$("p").empty(); 
+		// 	})
+		// })
+
+
+	// detach()用于移除所有匹配的元素
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("p").detach();
+			});
+		});
+
+
+	// remove()用于移除所有匹配的元素，当某个节点使用remove方法删除后，其后代节点将同时被删除，他的返回值是一个指向已经被删除的节点的引用，因此以后还可以使用这些元素
+		// $(document).ready(function(){
+		// 	$("button").click(function(){
+		// 		$("p").remove();
+		// 	});
+		// });
+	</script>
+</body>
+</html>

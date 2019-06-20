@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+	<p>1</p>
+	<ul>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+
+	
+	
+	<script>
+
+	// closest() 用于取得最近的匹配元素
+
+	// siblings() 用于取得匹配元素前后紧邻的同辈元素
+
+
+	// prev() 用于取得匹配元素前面紧邻的同辈元素
+
+
+
+	// next() 用于取得匹配元素后面紧邻的同辈元素
+		var $body=$("body").next();
+		var $p=$("p").next();
+		var $ul=$("ul").next();
+		alert($body.length);//==>0  这里body同级元素是head
+		alert($p.length);//==>1
+		alert($ul.length);//==>0
+
+
+
+
+	// children()  用于取得匹配元素的子元素集合
+		// var $body=$("body").children();
+		// var $p=$("p").children();
+		// var $ul=$("ul").children();
+		// alert($body.length);//==>3
+		// alert($p.length);//==>0
+		// alert($ul.length);//==>3
+	
+
+	</script>
+
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.4.1.js"></script>
+        <style>
+			.none{
+				display:none;
+			}
+
+        </style>
+    </head>
+    <body>
+    <p>xxxx</p>
+    <button>click</button>
+    <div id="panel">
+    	<h5 class="head">点击这里可以展开</h5>
+    	<div class="none">sdafasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd</div>
+    </div>
+
+    <script>
+   		$(document).ready(function(){
+   			$("button").bind("click",function(){
+   				$("p").slideToggle();
+   			})
+
+
+   			// 改用hover() 用于模拟光标悬停事件,当移到元素上时，会触发第一个函数，以此类推
+   				$("#panel h5.head").hover(function(){
+   					$(this).next().show();
+   				},function(){
+   					$(this).next().hide();
+   				})
+
+   			//将重复出现的$(this).next()存在变量中
+	   	 		//$("#panel h5.head").bind("click",function(){
+	   			// 	if($(this).next().is(":visible")){
+	   			// 		$(this).next().hide();
+	   			// 	}else{
+	   			// 		$(this).next().show();
+	   			// 	}
+	   			// })
+   		})
+    </script>
+    </body>
+</html>

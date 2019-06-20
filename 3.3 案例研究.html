@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.4.1.min.js"></script>
+        <style>
+            p a{display: block;width:150px;height:50px;line-height:50px;
+  background:#FF3366;color:#fff;border-radius: 3px;text-align: center;}
+#tooltip{position:absolute;width:200px;height:50px;line-height:50px;border:1px solid #ccc;text-align: center;box-shadow: 1px 1px 2px #ccc;background:#fff;border-radius:5px;}
+
+        </style>
+        
+    </head>
+    <body>
+    <p><a href="#" title="超链接提示1" class="tooltip">提示1</a></p>
+    <p><a href="#" title="超链接提示2" class="tooltip">提示2</a></p>
+    <p><a href="#" title="自带超链接提示1">自带超链接提示1</a></p>
+    <p><a href="#" title="自带超链接提示2">自带超链接提示2</a></p>
+
+<!-- 	<p><a href="#" class="tooltip" title="这是我的超链接提示1">提示1</a></p>
+	<p><a href="#" class="tooltip" title="这是我的超链接提示2">提示2</a></p>
+	<p><a href="#" title="这是自带提示1">自带提示1</a></p>
+	<p><a href="#" title="这是自带提示2">自带提示2</a></p>
+    <p class="xxx">123</p> -->
+
+
+    <script>
+    $(document).ready(function(){
+        var x=10,
+            y=20;
+        $(".tooltip").mouseover(function(e){
+            this.myTitle=this.title;
+            this.title="";  
+            
+            var tooltip="<div id='tooltip'>"+this.myTitle+"</div>";
+            $("body").append(tooltip);
+            $("#tooltip").css({
+                "top":(e.pageY+y)+"px",
+                "left":(e.pageX+x)+"px"
+            }).show("fast");
+        }).mouseout(function(){
+            this.title=this.myTitle;
+            $("#tooltip").remove();
+        }).mousemove(function(e){
+            $("#tooltip")
+                .css({
+                    "top":(e.pageY+y)+"px",
+                    "left":(e.pageX+x)+"px"
+                });
+        });
+    }) 
+
+    </script>
+    </body>
+</html>

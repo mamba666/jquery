@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<p>This is a paragraph.</p>
+	<button>复制每个 p 元素，然后追加到 body 元素</button>
+
+
+
+	<script>
+	// clone()克隆并追加一个p元素
+		$(document).ready(function(){
+			// 这种写法是错误的
+			// $("button").click().append($("p").clone())
+			$("button").click(function(){
+				$("body").append($("p").clone());
+			});
+		});
+
+
+	</script>
+</body>
+</html>
