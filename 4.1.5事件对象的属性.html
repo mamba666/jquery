@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.4.1.js"></script>
+
+    </head>
+    <body>
+   		<a href="https:mamba666.github.io">haha</a>
+   		<input type="text">
+
+   		<script>
+
+	   		// event.which  获取鼠标和键盘事件具体按下了什么
+	   			// 
+	   			// 获取鼠标
+	   			// 
+	   			// $("a").mousedown(function(event){
+	   			// 	alert(event.which);
+	   			// 	return false;
+	   			// })
+	   			// 
+	   			// 
+	   			// 获取键盘
+	   			// 
+	   			$("input").keyup(function(event){
+	   				alert(event.which);
+	   			})
+
+
+	   		// event.pageX  event.pageY   用于获取元素当前相对于页面的坐标
+	   			// $("a").click(function(event){
+	   			// 	alert("current mouse position:"+event.pageX+","+event.pageY);
+	   			// 	return false;
+	   			// })
+
+
+   			// event.target 获取到触发事件的元素
+   				// $("a").click(function(event){
+   				// 	alert(event.target.href);
+   				// })
+
+
+   			// event.stopPropagation()  用于阻止事件冒泡行为的发生
+
+
+   			// event.preventDefault()  阻止默认的事件行为，可以用下面的event.type
+
+
+   			// event.type  可以获取到事件的类型
+   			// 并且发现还可以阻止事件的发生	
+	   			// $("a").click(function(event){
+	   			// 	alert(event.type);
+	   			// 	return false;
+	   			// })
+   		</script>
+    </body>
+</html>

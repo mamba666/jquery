@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-3.4.1.js"></script>
+
+    </head>
+    <body>
+    	<div id="content">
+    		外层div
+    		<span>内层span</span>
+    		外div
+    	</div>
+    	<div id="msg"></div>
+
+		<script>
+			$(document).ready(function(){
+
+				// 当点击span时，会依次显示span div body
+				// 当点击div时，会依次显示div body
+				// 当点击body时，只显示body
+				// 
+				// 这就是事件冒泡机制，当多个元素绑定了同一个事件时，会按照DOM层级从下往上依次响应
+				// 
+				// 冒泡机制的问题：
+				// 本来只想触发这个span   但是却触发了其他的元素
+				// 所以，需要对事件作用范围进行限制
+				// 
+				// 有两种方法：均需要在function括号后面添加event
+				// 1： return false；  不仅阻止了事件往上冒泡，而且阻止了事件本身
+				// 
+				// 2： event.stopPropagation();  只阻止事件往上冒泡，不阻止事件本身
+					$("span").bind("click",function(event){
+						//这里$("#msg").html()是返回$("#msg")的内容
+						//可以通过console看出这里为什么可以一直的添加，
+						//第一次点击后，会添加一个p标签进去，虽然第一次$("#msg").html()返回空值，但是第二次会返回第一次添加进去的p标签，所以就能一直添加了
+						//
+						//
+						$("#msg").html($("#msg").html()+"<p>span</p>");
+						console.log($("#msg").html());
+						return false;	
+					});
+					$("#content").bind("click",function(){
+						$("#msg").html($("#msg").html()+"<p>div</p>");
+					});
+					$("body").bind("click",function(){
+						$("#msg").html($("#msg").html()+"<p>body</p>");
+					})
+			});
+		</script>
+    </body>
+</html>

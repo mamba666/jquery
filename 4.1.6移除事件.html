@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+        <script src="jquery-3.4.1.js"></script>
+    </head>
+    <body>
+		<button id="btn">click</button>
+		<button id="delAll">delete</button>
+		<div id="test"></div>
+
+    <script>
+    $(document).ready(function() {
+    	//
+    	//one()  事件只执行一次， 和bind()的使用类似，
+    	//
+    	//bind()在3.0已经被弃用，用on代替
+    	//
+    	$("#btn").one("click",myFun1=function(){
+    		//append() 可以在匹配元素结尾插入内容
+    		$(this).next().next().append("<p>fun1</p>");
+    	}).on("click",function(){
+    		//append() 可以在匹配元素结尾插入内容
+    		$(this).next().next().append("<p>fun2</p>");
+    	}).on("click",function(){
+    		//append() 可以在匹配元素结尾插入内容
+    		$(this).next().next().append("<p>fun3</p>");
+    	});
+
+
+    	// unbind("type","data")  
+    	// 如果没有参数，则删除所有事件
+    	// 有一个事件类型参数，则删除这个事件类型
+    	// 参数都齐，则删除指定位置的指定事件类型
+    	// 
+    	// 要注意的是第二个参数需要先为这些匿名函数设置一个变量，第二个参数就是这变量名
+
+    	$("#delAll").click(function(){
+    		$(this).prev().unbind("click",myFun1);
+    	});
+
+
+    });
+    </script>
+    </body>
+</html>
